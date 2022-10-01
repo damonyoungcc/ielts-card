@@ -1,6 +1,7 @@
 import { Button } from 'antd';
 import './index.less';
 
+const Login = () => {
   return (
     <div className={'login'}>
       <Button type="primary">
