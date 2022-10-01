@@ -1,13 +1,13 @@
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-import Login from './page/login';
-import Welcome from './page/welcome';
+import Word from './page/word';
+import Reading from './page/reading';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/welcome" component={Welcome} />
+        <Route exact path="/" component={Word} />
+        <Route exact path="/reading" component={Reading} />
       </Switch>
     </Router>
   );
