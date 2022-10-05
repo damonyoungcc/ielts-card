@@ -1,15 +1,15 @@
+import { useState, useEffect } from 'react';
 import './style/index.less';
 import { words } from '../../data/word';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { Space, Typography, Divider } from 'antd';
-const { Title, Paragraph } = Typography;
+import speakWord from './speak';
 
-console.log(words);
+const { Title, Paragraph } = Typography;
 const { ielts } = words;
 
 const Word = () => {
   const [number, setNumber] = useState(0);
+  const [visibleZh, setVisibleZh] = useState(true);
 
   const currentIeltsWord = ielts[number];
 
@@ -23,7 +23,6 @@ const Word = () => {
   const onKeyDown = (e) => {
     if (e.keyCode === 39 || e.keyCode === 40) {
       setNumber((pre) => {
-        console.log(pre, ielts.length);
         if (pre < ielts.length - 1) {
           return pre + 1;
         } else {
@@ -42,18 +41,25 @@ const Word = () => {
     }
   };
 
+  const speak = (word) => {
+    speakWord(word);
+  };
+
   return (
     <div className="word">
       <div className="current-word">
         <Space align="baseline" size={20}>
-          <Title level={4}>{currentIeltsWord.eng}</Title>
+          <Title level={4} onClick={() => speak(currentIeltsWord.eng)}>
+            {currentIeltsWord.eng}
+          </Title>
           <Paragraph>
-            {currentIeltsWord.type} {currentIeltsWord.zh}
+            {currentIeltsWord.type}
+            {visibleZh && <span>{currentIeltsWord.zh}</span>}
           </Paragraph>
           <div>
-            {currentIeltsWord.root.map((item) => {
+            {currentIeltsWord.root.map((item, index) => {
               return (
-                <Paragraph>
+                <Paragraph key={index}>
                   <pre>
                     <div className="root">
                       {item.eng}
@@ -72,9 +78,9 @@ const Word = () => {
       </div>
 
       <div>
-        {currentIeltsWord.eg.map((item) => {
+        {currentIeltsWord.eg.map((item, index) => {
           return (
-            <Paragraph>
+            <Paragraph key={index} onClick={() => speak(item.eng)}>
               <pre>
                 <div>{item.eng}</div>
                 <div>{item.zh}</div>
@@ -85,9 +91,9 @@ const Word = () => {
       </div>
       <div>
         <ul>
-          {currentIeltsWord.similar.map((item) => {
+          {currentIeltsWord.similar.map((item, index) => {
             return (
-              <li>
+              <li key={index}>
                 <div>{item.eng}</div>
                 <div>{item.zh}</div>
               </li>
