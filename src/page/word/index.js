@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './style/index.less';
 import { words } from '../../data/word';
-import { Space, Typography, Divider } from 'antd';
+import { Space, Typography, Divider, Radio, message } from 'antd';
 import speakWord from './speak';
 
 const { Title, Paragraph } = Typography;
@@ -45,8 +45,23 @@ const Word = () => {
     speakWord(word);
   };
 
+  const equal = (e, word) => {
+    if(e.keyCode === 13 && e.currentTarget.value.trim() === word) {
+      message.success("success");
+    }
+    console.log(e.keyCode);
+    console.log(e.currentTarget.value);
+  }
+
   return (
     <div className="word">
+      <Radio.Group
+        value={visibleZh}
+        onChange={(e) => setVisibleZh(e.target.value)}
+      >
+        <Radio.Button value={true}>showZH</Radio.Button>
+        <Radio.Button value={false}>hiddenZH</Radio.Button>
+      </Radio.Group>
       <div className="current-word">
         <Space align="baseline" size={20}>
           <Title level={4} onClick={() => speak(currentIeltsWord.eng)}>
@@ -54,7 +69,8 @@ const Word = () => {
           </Title>
           <Paragraph>
             {currentIeltsWord.type}
-            {visibleZh && <span>{currentIeltsWord.zh}</span>}
+            <span>{visibleZh ? currentIeltsWord.zh : '-'}</span>
+            <input onKeyDown={(e) => equal(e,currentIeltsWord.eng)} />
           </Paragraph>
           <div>
             {currentIeltsWord.root.map((item, index) => {
@@ -67,7 +83,7 @@ const Word = () => {
                         type="vertical"
                         style={{ borderColor: '#ffa940' }}
                       />
-                      {item.zh}
+                      {visibleZh ? item.zh : '-'}
                     </div>
                   </pre>
                 </Paragraph>
@@ -83,7 +99,7 @@ const Word = () => {
             <Paragraph key={index} onClick={() => speak(item.eng)}>
               <pre>
                 <div>{item.eng}</div>
-                <div>{item.zh}</div>
+                <div>{visibleZh ? item.zh : '-'}</div>
               </pre>
             </Paragraph>
           );
@@ -95,7 +111,7 @@ const Word = () => {
             return (
               <li key={index}>
                 <div>{item.eng}</div>
-                <div>{item.zh}</div>
+                <div>{visibleZh ? item.zh : '-'}</div>
               </li>
             );
           })}
