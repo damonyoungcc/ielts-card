@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './style/index.less';
 import { words } from '../../data/word';
 import { Space, Typography, Divider, Radio, message } from 'antd';
-import speakWord from './speak';
+import speakWord from '../../common/utils/speak.js';
 
 const { Title, Paragraph } = Typography;
 const { ielts } = words;

@@ -4,7 +4,7 @@ function speak(sentence) {
   var voices = synth.getVoices();
   const utterance = new SpeechSynthesisUtterance();
   utterance.text = sentence;
-  utterance.voice = voices['139'];
+  utterance.voice = voices['116'];
   window.speechSynthesis.speak(utterance);
 }
 
