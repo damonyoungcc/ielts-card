@@ -35,6 +35,24 @@ const sentenceList = [
       },
     ],
   },
+  {
+    eng: 'The two world wars, which interrupted the supply of raw material from Japan, also stifled the European silk industry.',
+    zh: '两次世界大战中断了来自日本的原材料供应，同时也抑制了欧洲的丝绸工业。',
+    words: [
+      {
+        eng: 'interrupt',
+        zh: '中断，阻碍；打断（话），打扰',
+      },
+      {
+        eng: 'raw',
+        zh: '未加工过的；生的；未经训练的；（伤口等）未愈的',
+      },
+      {
+        eng: 'stifle',
+        zh: '抑制；使窒息；扼杀',
+      },
+    ],
+  },
 ];
 
 export { sentenceList };

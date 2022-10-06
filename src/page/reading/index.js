@@ -1,4 +1,4 @@
-import './style/index.less';
+import "./style/index.less";
 import { useState, useEffect } from 'react';
 import { sentenceList } from '../../data/sentence';
 import { Space, Typography, Radio, Input } from 'antd';
@@ -22,7 +22,7 @@ const Reading = () => {
   }, []);
 
   const onKeyDown = (e) => {
-    if (e.keyCode === 39 || e.keyCode === 40) {
+    if (e.keyCode === 40) {
       setNumber((pre) => {
         if (pre < sentenceList.length - 1) {
           return pre + 1;
@@ -31,7 +31,7 @@ const Reading = () => {
         }
       });
     }
-    if (e.keyCode === 37 || e.keyCode === 38) {
+    if (e.keyCode === 38) {
       setNumber((pre) => {
         if (pre > 0) {
           return pre - 1;
@@ -47,12 +47,11 @@ const Reading = () => {
   };
 
   const onChangeInputValue = (e) => {
-    console.log(e);
     setInputValue(e.currentTarget.value);
   };
 
   return (
-    <div className="word">
+    <div className="sentence">
       <Radio.Group
         value={visibleType}
         onChange={(e) => setVisibleType(e.target.value)}
