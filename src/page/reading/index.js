@@ -77,7 +77,7 @@ const Reading = () => {
         </Paragraph>
       </div>
       <div>
-        <TextArea rows={5} value={inputValue} onChange={onChangeInputValue} />
+        <TextArea allowClear rows={5} value={inputValue} onChange={onChangeInputValue} />
       </div>
       <div>
         {currentSentence.words.map((item, index) => {

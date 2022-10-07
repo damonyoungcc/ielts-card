@@ -53,6 +53,50 @@ const sentenceList = [
       },
     ],
   },
+  {
+    eng: 'Migration is a complex issue, and biologists define it differently, depending in part on what sorts of animals they study.',
+    zh: '迁徙是一个复杂的问题，生物学家对它有不同的定义，部分取决于他们研究的动物种类',
+    words: [
+      {
+        eng: 'migration',
+        zh: '迁移，移居，迁徙',
+      },
+      {
+        eng: 'issue',
+        zh: '问题 / 流出，发行， 发行物',
+      },
+      {
+        eng: 'issue a statement / issue a shares',
+        zh: '发表声明 / 发行股票',
+      },
+      {
+        eng: 'biologist',
+        zh: '生物学家',
+      },
+      {
+        eng: 'in part',
+        zh: '部分地',
+      },
+    ],
+  },
+  {
+    eng: 'One way is by organising backstage tours, so people can be shown round the building and learn how a theatre operates.',
+    zh: '一种方式是组织参观后台，这样人们可以参观建筑，了解剧院是如何运作的。',
+    words: [
+      {
+        eng: 'interrupt',
+        zh: '中断，阻碍；打断（话），打扰',
+      },
+      {
+        eng: 'raw',
+        zh: '未加工过的；生的；未经训练的；（伤口等）未愈的',
+      },
+      {
+        eng: 'stifle',
+        zh: '抑制；使窒息；扼杀',
+      },
+    ],
+  },
 ];
 
 export { sentenceList };
