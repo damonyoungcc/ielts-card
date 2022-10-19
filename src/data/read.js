@@ -1,4 +1,4 @@
-const sentence = [
+const words = [
   {
     eng: `They say age is just a number, and that you are as young as you feel. The former prime minister of Malaysia, Mahathir Mohamad, is proving this to be true. Mr Mahathir is pushing back the years and running for office at the ripe old age of 97. He has been the country's leader twice before. The first time was for 22 years, between 1981 and 2003; the second time was a near-two-year term from May 2018. He has announced he will run for parliament in his country's upcoming general election. He was typically coy on whether or not he has his eyes set on the top job once again. He told journalists: "We have not decided who will be prime minister because the prime minister candidate is only relevant if we win." Mahathir Mohamad has been an ever-present force in Malaysian politics. He first became a member of parliament in 1964. He is widely regarded as being a visionary for changing his country's economic fortunes. He spearheaded Malaysia's rapid economic transformation throughout the 1980s. Mahathir's decision to contest the parliamentary seat of Langkawi marks his 11th general election campaign. Many commentators in Malaysia are sceptical about Mr Mahathir's chances because of his recent ill health. He has a history of heart trouble and has had several heart attacks and bypass operations, including a quadruple bypass surgery. He was discharged from hospital last month after contracting Covid-19.`,
     zh: '如果我们探测到了来自外星文明的信号，我们应该如何回应是一个备受争议的问题。',
@@ -16,5 +16,4 @@ const sentence = [
     zh: '一种方式是组织参观后台，这样人们可以参观建筑，了解剧院是如何运作的。',
   },
 ];
-
-export default sentence;
+export default words;
